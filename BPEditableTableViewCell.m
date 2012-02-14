@@ -67,9 +67,7 @@
 #pragma mark -
 #pragma mark Editing
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-	[self control].enabled = !disabledWhenNotEditing || editing;
-}
+
 
 #pragma mark -
 #pragma mark Control accessor
