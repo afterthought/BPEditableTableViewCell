@@ -51,7 +51,7 @@
 }
 
 - (void)setValue:(id)aValue {
-	self.textField.text = [[aValue copy] autorelease];
+	self.textField.text = [aValue copy];
 }
 
 #pragma mark -

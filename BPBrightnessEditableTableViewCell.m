@@ -24,7 +24,7 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-        dimLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
+        dimLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         dimLabel.text = @"☀";
         dimLabel.font = [UIFont systemFontOfSize:18.0];
         dimLabel.textColor = [UIColor colorWithWhite:0.35 alpha:1.0];
@@ -32,7 +32,7 @@
         dimLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:dimLabel];
 
-        brightLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
+        brightLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         brightLabel.text = @"☀";
         brightLabel.font = [UIFont systemFontOfSize:24.0];
         brightLabel.textColor = [UIColor colorWithWhite:0.35 alpha:1.0];

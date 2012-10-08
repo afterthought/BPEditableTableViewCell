@@ -13,6 +13,6 @@
 
 }
 
-@property (readonly) UISwitch *switchControl;
+@property (weak, readonly) UISwitch *switchControl;
 
 @end

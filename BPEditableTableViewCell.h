@@ -13,14 +13,14 @@
 	
     BOOL disabledWhenNotEditing;
     
-	id delegate;
+	id __weak delegate;
 }
 
-@property (readonly) UIControl *control;
+@property (weak, readonly) UIControl *control;
 @property (assign) BOOL disabledWhenNotEditing;
 @property (copy) id value;
 
-@property (assign) id delegate;
+@property (weak) id delegate;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 - (id)initWithLabel:(NSString *)label reuseIdentifier:(NSString *)reuseIdentifier;

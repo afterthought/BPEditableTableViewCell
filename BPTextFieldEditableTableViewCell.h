@@ -13,7 +13,7 @@
 
 }
 
-@property (readonly) UITextField *textField;
+@property (weak, readonly) UITextField *textField;
 
 - (id)initWithLabel:(NSString *)label placeholder:(NSString *)placeholder reuseIdentifier:(NSString *)reuseIdentifier;
 

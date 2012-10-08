@@ -14,6 +14,6 @@
     UILabel *brightLabel;
 }
 
-@property (readonly) UISlider *brightnessSlider;
+@property (weak, readonly) UISlider *brightnessSlider;
 
 @end

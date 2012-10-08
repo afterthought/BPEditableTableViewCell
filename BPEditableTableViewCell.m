@@ -42,10 +42,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	[control release];
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Accessors
