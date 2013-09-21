@@ -19,19 +19,32 @@
 #pragma mark -
 #pragma mark Construction and deallocation
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self _doInit];
+    }
+    return self;
+}
+- (void)_doInit {
+    Class controlClass = [[self class] controlClass];
+    control = [[controlClass alloc] initWithFrame:CGRectZero];
+    control.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    [control addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.contentView addSubview:control];
+    [self setNeedsLayout];
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+ 	if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self _doInit];
+    }
+    return self;
+}
+
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-	if (self = [super initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier]) {
-		Class controlClass = [[self class] controlClass];
-		control = [[controlClass alloc] initWithFrame:CGRectZero];
-		control.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
-        [control addTarget:self action:@selector(valueChanged:) forControlEvents:UIControlEventValueChanged];
-        
-		[self.contentView addSubview:control];
-		[self setNeedsLayout];
-	}
-	
-	return self;
+	return [self initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
 }
 
 - (id)initWithLabel:(NSString *)label reuseIdentifier:(NSString *)reuseIdentifier {

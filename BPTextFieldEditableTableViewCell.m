@@ -23,6 +23,7 @@
 		self.textField.textColor = [UIColor colorWithRed:0.22 green:0.33 blue:0.53 alpha:1];
 		self.textField.font = [UIFont systemFontOfSize:15.0];
 		self.textField.delegate = self;
+        self.textField.text = @"sdfsdfds";
 	}
 	
 	return self;
